@@ -1,9 +1,16 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ImageToPdf() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // Load adsbygoogle after render
+  useEffect(() => {
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {}
+  }, []);
 
   const handleConvert = async () => {
     if (!file) {
@@ -41,6 +48,19 @@ export default function ImageToPdf() {
   return (
     <div className="p-6 flex justify-center">
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-xl">
+
+        {/* ⭐ Ad 1: Top placement */}
+        <div className="mb-4">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="YOUR_CLIENT_ID"
+            data-ad-slot="TOP_SLOT_ID"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
+
         <h1 className="text-2xl font-semibold text-orange-600 mb-4">
           Image → PDF Converter
         </h1>
@@ -70,6 +90,18 @@ export default function ImageToPdf() {
         >
           {loading ? "Converting..." : "Convert to PDF"}
         </button>
+
+        {/* ⭐ Ad 2: Bottom placement */}
+        <div className="mt-6">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="YOUR_CLIENT_ID"
+            data-ad-slot="BOTTOM_SLOT_ID"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
       </div>
     </div>
   );

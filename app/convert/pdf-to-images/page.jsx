@@ -1,10 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { saveAs } from "file-saver";
 
 export default function PdfToImages() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // Load AdSense after render
+  useEffect(() => {
+    try {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {}
+  }, []);
 
   async function handleConvert() {
     if (!file) return;
@@ -12,7 +19,7 @@ export default function PdfToImages() {
 
     try {
       const formData = new FormData();
-      formData.append("file", file);  // ✅ FIXED
+      formData.append("file", file);
 
       const res = await fetch("/api/pdf-to-images", {
         method: "POST",
@@ -33,11 +40,25 @@ export default function PdfToImages() {
 
   return (
     <div className="p-6">
+
+      {/* ⭐ Ad Slot 1: Top Placement */}
+      <div className="mb-4">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="YOUR_CLIENT_ID"
+          data-ad-slot="TOP_SLOT_ID"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
+
       <h1 className="text-2xl font-semibold text-orange-600 mb-4">
         PDF → Images Converter
       </h1>
 
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-xl">
+
         <label className="border-2 border-dashed border-gray-300 p-6 rounded-lg flex flex-col items-center cursor-pointer hover:border-orange-400">
           <span className="text-gray-500">Upload PDF</span>
           <input
@@ -63,6 +84,18 @@ export default function PdfToImages() {
         >
           {loading ? "Converting..." : "Convert to Images"}
         </button>
+
+        {/* ⭐ Ad Slot 2: Bottom Placement */}
+        <div className="mt-6">
+          <ins
+            className="adsbygoogle"
+            style={{ display: "block" }}
+            data-ad-client="YOUR_CLIENT_ID"
+            data-ad-slot="BOTTOM_SLOT_ID"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,17 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function TextToPdf() {
   const [text, setText] = useState("")
   const [loading, setLoading] = useState(false)
+
+  // Load AdSense script correctly
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({})
+    } catch (e) {}
+  }, [])
 
   const handleConvert = async () => {
     if (!text.trim()) return alert("Enter some text first!")
@@ -33,6 +40,18 @@ export default function TextToPdf() {
     <div className="bg-white shadow-sm rounded-xl p-8 border">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">Text → PDF</h1>
 
+      {/* ⭐ AdSense Ad Placement 1 (Below Title) */}
+      <div className="my-4 flex justify-center">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-XXXXXX"
+          data-ad-slot="11111111"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
+
       <textarea
         className="w-full min-h-[250px] border rounded-md p-4 text-gray-700 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none"
         placeholder="Type or paste text here..."
@@ -40,10 +59,22 @@ export default function TextToPdf() {
         onChange={(e) => setText(e.target.value)}
       />
 
+      {/* ⭐ AdSense Ad Placement 2 (Below TextArea) */}
+      <div className="my-4 flex justify-center">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block" }}
+          data-ad-client="ca-pub-XXXXXX"
+          data-ad-slot="22222222"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+      </div>
+
       <button
         onClick={handleConvert}
         disabled={loading}
-        className="mt-6 w-full bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-lg font-medium transition disabled:opacity-50"
+        className="mt-4 w-full bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-lg font-medium transition disabled:opacity-50"
       >
         {loading ? "Converting..." : "Download PDF"}
       </button>

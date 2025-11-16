@@ -34,6 +34,16 @@ export default function PdfToWord() {
   return (
     <div className="bg-white shadow-sm rounded-xl p-8 border">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">PDF → Word</h1>
+      {/* AdSense Ad */}
+<div className="my-4 flex justify-center">
+  <ins className="adsbygoogle"
+    style={{ display: "block" }}
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    data-ad-slot="1111111111"
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+  ></ins>
+</div>
 
       <div
         onClick={() => document.getElementById("fileInput").click()}
@@ -51,7 +61,16 @@ export default function PdfToWord() {
         className="hidden"
         onChange={(e) => setFile(e.target.files[0])}
       />
-
+      {/* Ad before convert button */}
+<div className="my-4 flex justify-center">
+  <ins className="adsbygoogle"
+    style={{ display: "block" }}
+    data-ad-client="ca-pub-XXXXXXXXXXXX"
+    data-ad-slot="2222222222"
+    data-ad-format="auto"
+    data-full-width-responsive="true"
+  ></ins>
+</div>
       <button
         disabled={loading}
         onClick={handleConvert}
