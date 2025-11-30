@@ -10,7 +10,7 @@ export default function WordToPdf() {
   const [file, setFile] = useState(null)
   const [loading, setLoading] = useState(false)
 
-  // Load AdSense on-viewport
+  // Push ads after component mounts
   useEffect(() => {
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({})
@@ -43,9 +43,7 @@ export default function WordToPdf() {
     <div className="bg-white shadow-sm rounded-xl p-8 border">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">Word → PDF</h1>
 
-      {/* ⭐ Ad Placement 1 (Below Title) */}
-      <div className="my-4 flex justify-center">
-         {/* Load AdSense script */}
+      {/* ⭐ Load AdSense script only once */}
       <Script
         async
         strategy="afterInteractive"
@@ -53,19 +51,19 @@ export default function WordToPdf() {
         crossOrigin="anonymous"
       />
 
-      {/* ⭐ Ad 1: Top placement */}
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-2008367184647190"
-        data-ad-slot="7424109739"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-
-      <Script id="adsense-init" strategy="afterInteractive">
-        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-      </Script>
+      {/* ⭐ Top Ad */}
+      <div className="my-4 flex justify-center w-full">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block", width: "100%" }}
+          data-ad-client="ca-pub-2008367184647190"
+          data-ad-slot="7424109739"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <Script id="adsense-init-top" strategy="afterInteractive">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
       </div>
 
       <div
@@ -85,23 +83,19 @@ export default function WordToPdf() {
         className="hidden"
       />
 
-      {/* ⭐ Ad Placement 2 (Below Upload Box) */}
-      <div className="my-4 flex justify-center">
-     
-
       {/* ⭐ Bottom Ad */}
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-2008367184647190"
-        data-ad-slot="3501176590"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
-
-      <Script id="adsense-init-bottom" strategy="afterInteractive">
-        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-      </Script>
+      <div className="my-4 flex justify-center w-full">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block", width: "100%" }}
+          data-ad-client="ca-pub-2008367184647190"
+          data-ad-slot="3501176590"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <Script id="adsense-init-bottom" strategy="afterInteractive">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
       </div>
 
       <button
