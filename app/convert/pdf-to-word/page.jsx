@@ -1,11 +1,18 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { saveAs } from "file-saver";
-import Script from "next/script"
+import Script from "next/script";
 
 export default function PdfToWord() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
+
+  // Push ads after component mounts
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {}
+  }, []);
 
   async function handleConvert() {
     if (!file) return alert("Select a PDF file first!");
@@ -35,9 +42,8 @@ export default function PdfToWord() {
   return (
     <div className="bg-white shadow-sm rounded-xl p-8 border">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">PDF → Word</h1>
-      {/* AdSense Ad */}
-<div className="my-4 flex justify-center">
-   {/* Load AdSense script */}
+
+      {/* ⭐ Load AdSense script only once */}
       <Script
         async
         strategy="afterInteractive"
@@ -45,21 +51,22 @@ export default function PdfToWord() {
         crossOrigin="anonymous"
       />
 
-      {/* ⭐ Ad 1: Top placement */}
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-2008367184647190"
-        data-ad-slot="7424109739"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
+      {/* ⭐ Top Ad */}
+      <div className="my-4 flex justify-center w-full">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block", width: "100%" }}
+          data-ad-client="ca-pub-2008367184647190"
+          data-ad-slot="7424109739"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <Script id="adsense-init-top" strategy="afterInteractive">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
+      </div>
 
-      <Script id="adsense-init" strategy="afterInteractive">
-        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-      </Script>
-</div>
-
+      {/* File Upload */}
       <div
         onClick={() => document.getElementById("fileInput").click()}
         className="border-2 border-dashed rounded-lg p-6 text-center cursor-pointer hover:bg-orange-50"
@@ -76,27 +83,26 @@ export default function PdfToWord() {
         className="hidden"
         onChange={(e) => setFile(e.target.files[0])}
       />
-      {/* Ad before convert button */}
-<div className="my-4 flex justify-center">
 
       {/* ⭐ Bottom Ad */}
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client="ca-pub-2008367184647190"
-        data-ad-slot="3501176590"
-        data-ad-format="auto"
-        data-full-width-responsive="true"
-      ></ins>
+      <div className="my-4 flex justify-center w-full">
+        <ins
+          className="adsbygoogle"
+          style={{ display: "block", width: "100%" }}
+          data-ad-client="ca-pub-2008367184647190"
+          data-ad-slot="3501176590"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        ></ins>
+        <Script id="adsense-init-bottom" strategy="afterInteractive">
+          {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+        </Script>
+      </div>
 
-      <Script id="adsense-init-bottom" strategy="afterInteractive">
-        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
-      </Script>
-</div>
       <button
         disabled={loading}
         onClick={handleConvert}
-        className="mt-6 w-full bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-lg"
+        className="mt-6 w-full bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-lg font-medium transition disabled:opacity-50"
       >
         {loading ? "Converting..." : "Download Word (.docx)"}
       </button>
