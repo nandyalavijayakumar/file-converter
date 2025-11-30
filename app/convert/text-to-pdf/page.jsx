@@ -75,13 +75,6 @@ export default function TextToPdf() {
 
       {/* ⭐ AdSense Ad Placement 2 (Below TextArea) */}
       <div className="my-4 flex justify-center">
-       {/* Load AdSense script */}
-      <Script
-        async
-        strategy="afterInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
-        crossOrigin="anonymous"
-      />
 
       {/* ⭐ Bottom Ad */}
       <ins

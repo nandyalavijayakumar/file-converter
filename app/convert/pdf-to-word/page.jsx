@@ -78,13 +78,6 @@ export default function PdfToWord() {
       />
       {/* Ad before convert button */}
 <div className="my-4 flex justify-center">
-  {/* Load AdSense script */}
-      <Script
-        async
-        strategy="afterInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
-        crossOrigin="anonymous"
-      />
 
       {/* ⭐ Bottom Ad */}
       <ins

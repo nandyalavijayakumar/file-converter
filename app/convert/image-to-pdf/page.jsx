@@ -107,13 +107,7 @@ export default function ImageToPdf() {
 
         {/* ⭐ Ad 2: Bottom placement */}
         <div className="mt-6">
-           {/* Load AdSense script */}
-      <Script
-        async
-        strategy="afterInteractive"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
-        crossOrigin="anonymous"
-      />
+     
 
       {/* ⭐ Bottom Ad */}
       <ins
