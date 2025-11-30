@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import mammoth from "mammoth"
 import { PDFDocument, StandardFonts } from "pdf-lib"
 import { saveAs } from "file-saver"
+import Script from "next/script"
 
 export default function WordToPdf() {
   const [file, setFile] = useState(null)
@@ -44,14 +45,27 @@ export default function WordToPdf() {
 
       {/* ⭐ Ad Placement 1 (Below Title) */}
       <div className="my-4 flex justify-center">
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-XXXXXX"
-          data-ad-slot="11111111"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
+         {/* Load AdSense script */}
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
+        crossOrigin="anonymous"
+      />
+
+      {/* ⭐ Ad 1: Top placement */}
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-2008367184647190"
+        data-ad-slot="7424109739"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+
+      <Script id="adsense-init" strategy="afterInteractive">
+        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </Script>
       </div>
 
       <div
@@ -73,14 +87,27 @@ export default function WordToPdf() {
 
       {/* ⭐ Ad Placement 2 (Below Upload Box) */}
       <div className="my-4 flex justify-center">
-        <ins
-          className="adsbygoogle"
-          style={{ display: "block" }}
-          data-ad-client="ca-pub-XXXXXX"
-          data-ad-slot="22222222"
-          data-ad-format="auto"
-          data-full-width-responsive="true"
-        ></ins>
+        {/* Load AdSense script */}
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
+        crossOrigin="anonymous"
+      />
+
+      {/* ⭐ Bottom Ad */}
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-2008367184647190"
+        data-ad-slot="3501176590"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+
+      <Script id="adsense-init-bottom" strategy="afterInteractive">
+        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </Script>
       </div>
 
       <button
