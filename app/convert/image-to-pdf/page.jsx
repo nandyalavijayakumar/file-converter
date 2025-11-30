@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Script from "next/script"
 
 export default function ImageToPdf() {
   const [file, setFile] = useState(null);
@@ -51,14 +52,27 @@ export default function ImageToPdf() {
 
         {/* ⭐ Ad 1: Top placement */}
         <div className="mb-4">
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="YOUR_CLIENT_ID"
-            data-ad-slot="TOP_SLOT_ID"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
+        {/* Load AdSense script */}
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
+        crossOrigin="anonymous"
+      />
+
+      {/* ⭐ Ad 1: Top placement */}
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-2008367184647190"
+        data-ad-slot="7424109739"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+
+      <Script id="adsense-init" strategy="afterInteractive">
+        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </Script>
         </div>
 
         <h1 className="text-2xl font-semibold text-orange-600 mb-4">
@@ -93,14 +107,27 @@ export default function ImageToPdf() {
 
         {/* ⭐ Ad 2: Bottom placement */}
         <div className="mt-6">
-          <ins
-            className="adsbygoogle"
-            style={{ display: "block" }}
-            data-ad-client="YOUR_CLIENT_ID"
-            data-ad-slot="BOTTOM_SLOT_ID"
-            data-ad-format="auto"
-            data-full-width-responsive="true"
-          ></ins>
+           {/* Load AdSense script */}
+      <Script
+        async
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
+        crossOrigin="anonymous"
+      />
+
+      {/* ⭐ Bottom Ad */}
+      <ins
+        className="adsbygoogle"
+        style={{ display: "block" }}
+        data-ad-client="ca-pub-2008367184647190"
+        data-ad-slot="3501176590"
+        data-ad-format="auto"
+        data-full-width-responsive="true"
+      ></ins>
+
+      <Script id="adsense-init-bottom" strategy="afterInteractive">
+        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </Script>
         </div>
       </div>
     </div>
