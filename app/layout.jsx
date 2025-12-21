@@ -8,8 +8,9 @@ export const metadata = {
   description: "Convert Text, Word, Images, and PDF files easily.",
   // Add meta tags here if needed
   metadataBase: new URL("https://www.fileconverter.co.in"),
-  alternates: {},
-  icons: {},
+  other: {
+    "google-adsense-account": "ca-pub-2008367184647190"
+  }
 }
 
 export default function RootLayout({ children }) {
