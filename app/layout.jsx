@@ -5,13 +5,20 @@ import Script from "next/script"
 
 export const metadata = {
   title: "FileConverter",
-  description: "Convert Text, Word, Images, and PDF files easily."
+  description: "Convert Text, Word, Images, and PDF files easily.",
+  // Add meta tags here if needed
+  metadataBase: new URL("https://www.fileconverter.co.in"),
+  alternates: {},
+  icons: {},
 }
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-       
+       <head>
+        {/* AdSense Meta */}
+        <meta name="google-adsense-account" content="ca-pub-2008367184647190" />
+      </head>
       <body className="min-h-screen bg-gray-50">
  {/* Google AdSense */}
         <Script
