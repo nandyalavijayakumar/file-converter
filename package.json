@@ -12,11 +12,11 @@
     "file-saver": "^2.0.5",
     "formidable-serverless": "^1.1.1",
     "mammoth": "^1.11.0",
-    "next": "latest",
+    "next": "^16.1.0",
     "pdf-lib": "^1.17.1",
     "pdfjs-dist": "^3.4.120",
-    "react": "latest",
-    "react-dom": "latest"
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.22",
