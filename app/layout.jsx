@@ -45,9 +45,18 @@ export default function RootLayout({ children }) {
               </div>
             </main>
 
-            <footer className="border-t bg-white p-4 text-center text-sm text-gray-500">
-              © {new Date().getFullYear()} FileConverter — Built with ❤️
-            </footer>
+           <footer className="border-t bg-white p-4 text-center text-sm text-gray-500">
+  <div className="mb-2">
+    © {new Date().getFullYear()} FileConverter — Built with ❤️
+  </div>
+  <div className="flex justify-center gap-4">
+    <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
+    <a href="/terms" className="hover:underline">Terms</a>
+    <a href="/about" className="hover:underline">About</a>
+    <a href="/contact" className="hover:underline">Contact</a>
+  </div>
+</footer>
+
 
           </div>
 
