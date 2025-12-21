@@ -14,8 +14,12 @@ export default function RootLayout({ children }) {
        
       <body className="min-h-screen bg-gray-50">
  {/* Google AdSense */}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
-     crossorigin="anonymous"></script>
+        <Script
+          async
+          strategy="afterInteractive"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2008367184647190"
+          crossOrigin="anonymous"
+        />
         {/* CLIENT: mobile menu button + mobile drawer */}
         <MobileMenu />
 
