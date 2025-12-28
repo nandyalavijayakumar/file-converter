@@ -1,3 +1,9 @@
+// import { redirect } from "next/navigation";
+
+// export default function Home() {
+//   redirect("/convert/text-to-pdf");
+// }
+
 "use client"
 
 import { useState, useEffect } from "react"
@@ -39,8 +45,14 @@ export default function TextToPdf() {
 
   return (
     <div className="bg-white shadow-sm rounded-xl p-8 border">
-      <h1 className="text-2xl font-semibold mb-6 text-gray-800">Text → PDF</h1>
+   
 
+      <h1 className="text-2xl font-semibold mb-6 text-gray-800">Text → PDF</h1>
+   <p className="text-gray-600 mb-4">
+  Convert your text into a clean, downloadable PDF file instantly. 
+  This free Text to PDF converter is perfect for notes, essays, invoices, stories,
+  or any content you want to save and share professionally.
+</p>
       {/* ⭐ Load AdSense script only once per page */}
       <Script
         async
@@ -70,6 +82,14 @@ export default function TextToPdf() {
         value={text}
         onChange={(e) => setText(e.target.value)}
       />
+      <div className="mt-6">
+  <h2 className="text-lg font-semibold mb-2">How to convert text to PDF</h2>
+  <ol className="list-decimal ml-6 text-gray-600 space-y-1">
+    <li>Type or paste your text into the box above.</li>
+    <li>Click the “Download PDF” button.</li>
+    <li>Your PDF will be generated instantly.</li>
+  </ol>
+</div>
 
       {/* ⭐ Bottom Ad */}
       <div className="my-4 flex justify-center w-full">
@@ -93,6 +113,34 @@ export default function TextToPdf() {
       >
         {loading ? "Converting..." : "Download PDF"}
       </button>
+      <div className="mt-8">
+  <h2 className="text-lg font-semibold mb-2">Why use our Text to PDF converter?</h2>
+  <ul className="list-disc ml-6 text-gray-600 space-y-1">
+    <li>Fast and free — no sign-up required</li>
+    <li>Works on mobile, tablet and desktop</li>
+    <li>No watermark added</li>
+    <li>Your files are not stored on our servers</li>
+  </ul>
+</div>
+
+<div className="mt-8">
+  <h2 className="text-lg font-semibold mb-2">FAQ</h2>
+
+  <p className="font-medium">Is this Text to PDF tool free?</p>
+  <p className="text-gray-600 mb-3">Yes — completely free with no limits.</p>
+
+  <p className="font-medium">Will my text be saved?</p>
+  <p className="text-gray-600 mb-3">
+    No, everything happens securely in real-time.
+  </p>
+
+  <p className="font-medium">Can I convert long text?</p>
+  <p className="text-gray-600">
+    Yes — just paste your content and download it as PDF instantly.
+  </p>
+</div>
+
     </div>
   )
 }
+
