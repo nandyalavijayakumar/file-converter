@@ -42,6 +42,11 @@ export default function PdfToWord() {
   return (
     <div className="bg-white shadow-sm rounded-xl p-8 border">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">PDF → Word</h1>
+     <p className="text-gray-600 mb-4">
+  Convert PDF files into editable Word (.docx) documents in seconds. 
+  This free PDF to Word tool helps you edit text, fix documents, and reuse content 
+  without typing everything again.
+</p>
 
       {/* ⭐ Load AdSense script only once */}
       <Script
@@ -83,6 +88,14 @@ export default function PdfToWord() {
         className="hidden"
         onChange={(e) => setFile(e.target.files[0])}
       />
+      <div className="mt-6">
+  <h2 className="text-lg font-semibold mb-2">How to convert PDF to Word</h2>
+  <ol className="list-decimal ml-6 text-gray-600 space-y-1">
+    <li>Upload your PDF file using the upload box above.</li>
+    <li>Click “Download Word (.docx)”.</li>
+    <li>Your editable Word file will be generated automatically.</li>
+  </ol>
+</div>
 
       {/* ⭐ Bottom Ad */}
       <div className="my-4 flex justify-center w-full">
@@ -106,6 +119,33 @@ export default function PdfToWord() {
       >
         {loading ? "Converting..." : "Download Word (.docx)"}
       </button>
+      <div className="mt-8">
+  <h2 className="text-lg font-semibold mb-2">Why use our PDF to Word converter?</h2>
+  <ul className="list-disc ml-6 text-gray-600 space-y-1">
+    <li>Free and easy — no registration required</li>
+    <li>Keeps as much text formatting as possible</li>
+    <li>Works on mobile and desktop</li>
+    <li>Your files are not stored after conversion</li>
+  </ul>
+</div>
+
+<div className="mt-8">
+  <h2 className="text-lg font-semibold mb-2">FAQ</h2>
+
+  <p className="font-medium">Will images and layouts convert perfectly?</p>
+  <p className="text-gray-600 mb-3">
+    Simple PDFs convert very well. Complex designs may need small manual edits.
+  </p>
+
+  <p className="font-medium">Is this tool free?</p>
+  <p className="text-gray-600 mb-3">Yes — you can convert as many files as you want.</p>
+
+  <p className="font-medium">Do you store my files?</p>
+  <p className="text-gray-600">
+    No — files are processed temporarily and never saved.
+  </p>
+</div>
+
     </div>
   );
 }

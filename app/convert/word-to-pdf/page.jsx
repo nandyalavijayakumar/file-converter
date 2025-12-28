@@ -42,6 +42,11 @@ export default function WordToPdf() {
   return (
     <div className="bg-white shadow-sm rounded-xl p-8 border">
       <h1 className="text-2xl font-semibold mb-6 text-gray-800">Word → PDF</h1>
+     <p className="text-gray-600 mb-4">
+  Convert Word documents (.doc and .docx) into PDF files instantly. 
+  This free Word to PDF converter keeps your formatting clean and makes 
+  it easy to share documents safely on any device.
+</p>
 
       {/* ⭐ Load AdSense script only once */}
       <Script
@@ -82,6 +87,14 @@ export default function WordToPdf() {
         onChange={(e) => setFile(e.target.files[0])}
         className="hidden"
       />
+<div className="mt-6">
+  <h2 className="text-lg font-semibold mb-2">How to convert Word to PDF</h2>
+  <ol className="list-decimal ml-6 text-gray-600 space-y-1">
+    <li>Upload your Word (.docx) file above.</li>
+    <li>Click the “Download PDF” button.</li>
+    <li>Your PDF will be generated automatically.</li>
+  </ol>
+</div>
 
       {/* ⭐ Bottom Ad */}
       <div className="my-4 flex justify-center w-full">
@@ -105,6 +118,31 @@ export default function WordToPdf() {
       >
         {loading ? "Converting..." : "Download PDF"}
       </button>
+      <div className="mt-8">
+  <h2 className="text-lg font-semibold mb-2">Why use our Word to PDF converter?</h2>
+  <ul className="list-disc ml-6 text-gray-600 space-y-1">
+    <li>Free and fast — no account required</li>
+    <li>Works on mobile, tablet, and desktop</li>
+    <li>No watermark on your files</li>
+    <li>Your documents are not stored on our servers</li>
+  </ul>
+</div>
+
+<div className="mt-8">
+  <h2 className="text-lg font-semibold mb-2">FAQ</h2>
+
+  <p className="font-medium">Does this tool support .doc and .docx?</p>
+  <p className="text-gray-600 mb-3">Yes — you can upload both formats.</p>
+
+  <p className="font-medium">Is this tool free?</p>
+  <p className="text-gray-600 mb-3">Yes, it’s completely free to use.</p>
+
+  <p className="font-medium">Will my file be saved?</p>
+  <p className="text-gray-600">
+    No — conversion happens instantly and nothing is stored.
+  </p>
+</div>
+
     </div>
   )
 }
