@@ -15,6 +15,7 @@ export async function GET() {
     "/terms",
     "/about",
     "/contact",
+    "/adsense-consent",
   ];
 
   const urls = pages
