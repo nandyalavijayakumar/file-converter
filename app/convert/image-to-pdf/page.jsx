@@ -1,6 +1,9 @@
 "use client";
 import { useState, useEffect } from "react";
 import Script from "next/script";
+import StructuredData from "../../StructuredData";
+import FAQSchema from "../../FAQSchema";
+import BreadcrumbSchema from "../../BreadcrumbSchema";
 
 export default function ImageToPdf() {
   const [file, setFile] = useState(null);
@@ -43,6 +46,36 @@ export default function ImageToPdf() {
   };
 
   return (
+  <>
+    <StructuredData
+      title="Image to PDF Converter"
+      description="Convert JPG, PNG, WebP and other images to PDF online for free."
+      url="https://www.fileconverter.co.in/convert/image-to-pdf"
+    />
+
+    <BreadcrumbSchema
+      pageName="Image to PDF"
+      pageUrl="https://www.fileconverter.co.in/convert/image-to-pdf"
+    />
+
+    <FAQSchema
+      faqs={[
+        {
+          question: "Is my file safe?",
+          answer:
+            "We do not store your files. They are processed securely and deleted automatically.",
+        },
+        {
+          question: "What formats are supported?",
+          answer: "JPG, PNG, WebP, GIF and more.",
+        },
+        {
+          question: "Is it free?",
+          answer: "Yes — you can convert unlimited files.",
+        },
+      ]}
+    />
+
     <div className="p-6 flex justify-center">
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-xl">
 
@@ -148,7 +181,8 @@ export default function ImageToPdf() {
         <Script id="adsense-init-bottom" strategy="afterInteractive">
           {`(window.adsbygoogle = window.adsbygoogle || []).push({});`}
         </Script>
-      </div>
+              </div>
     </div>
-  );
+  </>
+);
 }

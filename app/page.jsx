@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react"
 import Script from "next/script"
 import Link from "next/link"
+import StructuredData from "./StructuredData";
+import FAQSchema from "./FAQSchema";
+import BreadcrumbSchema from "./BreadcrumbSchema";
 
 export default function TextToPdf() {
   const [text, setText] = useState("")
@@ -18,37 +21,76 @@ export default function TextToPdf() {
     if (!text.trim()) return alert("Enter some text first!")
     setLoading(true)
 
-    try {
-      const response = await fetch("/api/text-to-pdf", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text }),
-      })
+  try {
+  const response = await fetch("/api/text-to-pdf", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ text }),
+  });
 
-      const blob = await response.blob()
-      const url = URL.createObjectURL(blob)
+  if (!response.ok) {
+    throw new Error("Failed to convert text to PDF.");
+  }
 
-      const a = document.createElement("a")
-      a.href = url
-      a.download = "converted.pdf"
-      a.click()
-    } finally {
-      setLoading(false)
-    }
+  const blob = await response.blob();
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "converted.pdf";
+  a.click();
+
+  URL.revokeObjectURL(url);
+} catch (error) {
+  console.error(error);
+  alert("Conversion failed. Please try again.");
+} finally {
+  setLoading(false);
+}
   }
 
   return (
+  <>
+    <StructuredData
+  title="FileConverter - Free Online File Converter"
+  description="Convert PDF, Word, Images, Excel and more online for free."
+  url="https://www.fileconverter.co.in"
+/>
+
+   <BreadcrumbSchema
+  pageName="Home"
+  pageUrl="https://www.fileconverter.co.in"
+/>
+
+   <FAQSchema
+  faqs={[
+    {
+      question: "Is there any usage limit?",
+      answer: "No — convert as many files as you want.",
+    },
+    {
+      question: "Can I use it on mobile?",
+      answer: "Yes — it works on all smartphones.",
+    },
+    {
+      question: "Do I need to install software?",
+      answer: "No — everything runs inside your browser.",
+    },
+  ]}
+/>
+
     <div className="bg-white shadow-sm rounded-xl p-8 border">
 
-      <h1 className="text-2xl font-semibold mb-6 text-gray-800">
-        Text to PDF — Free Online Converter
-      </h1>
+      <h1 className="text-4xl font-bold text-center text-orange-600">
+Free Online File Converter
+</h1>
 
-      <p className="text-gray-600 mb-4">
-        Create professional PDF documents from plain text in seconds.
-        No sign-up, no watermark, and completely secure. Perfect for notes,
-        resumes, assignments, reports, letters and more.
-      </p>
+     <p className="mt-4 text-lg text-gray-600 text-center">
+Convert PDF, Word, Images, Excel, PowerPoint and many other file formats online
+for free. Fast, secure and easy to use with no registration required.
+</p>
 
       <Script
         async
@@ -71,14 +113,24 @@ export default function TextToPdf() {
         </Script>
       </div>
 
-      <textarea
-        className="w-full min-h-[250px] border rounded-md p-4 text-gray-700 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none"
-        placeholder="Type or paste text here..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
+      <label
+  htmlFor="text-input"
+  className="block text-sm font-medium text-gray-700 mb-2"
+>
+  Enter your text
+</label>
+
+<textarea
+  id="text-input"
+  aria-label="Enter text to convert to PDF"
+  className="w-full min-h-[250px] border rounded-md p-4 text-gray-700 focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none"
+  placeholder="Type or paste text here..."
+  value={text}
+  onChange={(e) => setText(e.target.value)}
+/>
 
       <button
+       aria-label="Convert text to PDF"
         onClick={handleConvert}
         disabled={loading}
         className="mt-4 w-full bg-orange-600 hover:bg-orange-700 text-white p-3 rounded-lg font-medium transition disabled:opacity-50"
@@ -278,5 +330,6 @@ export default function TextToPdf() {
       </div>
 
     </div>
-  )
+  </>
+)
 }
