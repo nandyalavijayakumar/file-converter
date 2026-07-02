@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const baseUrl = "https://www.fileconverter.co.in";
+  const baseUrl = "https://fileconverter.co.in";
   const today = new Date().toISOString();
 
   const pages = [
@@ -23,9 +23,15 @@ export async function GET() {
       (path) => `
         <url>
           <loc>${baseUrl}${path}</loc>
-          <changefreq>weekly</changefreq>
-          <priority>${path.startsWith("/convert") ? "0.9" : "0.5"}</priority>
           <lastmod>${today}</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>${
+            path === "/"
+              ? "1.0"
+              : path.startsWith("/convert")
+              ? "0.9"
+              : "0.6"
+          }</priority>
         </url>
       `
     )

@@ -5,37 +5,57 @@ import Script from "next/script"
 import Link from "next/link";
 
 export const metadata = {
-  metadataBase: new URL("https://www.fileconverter.co.in"),
+metadataBase: new URL("https://fileconverter.co.in"),
+  applicationName: "FileConverter",
 
   title: {
-    default: "FileConverter - Free Online PDF, Word & Image Converter",
+    default: "Free Online File Converter | Convert PDF, Word, Images & More",
     template: "%s | FileConverter",
   },
 
   description:
-    "Free online file converter for PDF, Word, Images, Excel, PowerPoint and more. Fast, secure and works on any device.",
+    "Free online file converter to convert PDF, Word, Images, Excel, PowerPoint and Text files. Fast, secure, browser-based and works on desktop and mobile.",
 
   keywords: [
-    "File Converter",
-    "PDF Converter",
-    "Word to PDF",
-    "Image Converter",
-    "PDF to Word",
-    "Online Converter",
-    "Free File Converter",
+    "file converter",
+    "online file converter",
+    "pdf converter",
+    "word to pdf",
+    "pdf to word",
+    "image to pdf",
+    "pdf to image",
+    "text to pdf",
+    "free online converter",
+    "document converter",
   ],
+
+  authors: [
+    {
+      name: "FileConverter",
+    },
+  ],
+
+  creator: "FileConverter",
+
+  publisher: "FileConverter",
+
+  category: "Utilities",
 
   alternates: {
     canonical: "/",
   },
 
   openGraph: {
-    title: "FileConverter - Free Online File Converter",
+    title: "Free Online File Converter",
     description:
-      "Convert PDF, Word, Images, Excel and many more file formats online for free.",
-    url: "https://www.fileconverter.co.in",
+      "Convert PDF, Word, Images, Excel and more online for free.",
+
+    url: "https://fileconverter.co.in",
+
     siteName: "FileConverter",
+
     locale: "en_US",
+
     type: "website",
 
     images: [
@@ -50,23 +70,31 @@ export const metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "FileConverter - Free Online File Converter",
+
+    title: "Free Online File Converter",
+
     description:
-      "Convert PDF, Word, Images and more online for free.",
+      "Fast and secure online file conversion.",
+
     images: ["/images/og-image.png"],
   },
 
   robots: {
     index: true,
     follow: true,
+
+    nocache: false,
+
     googleBot: {
       index: true,
       follow: true,
       "max-image-preview": "large",
-      "max-video-preview": -1,
       "max-snippet": -1,
+      "max-video-preview": -1,
     },
   },
+
+
 
   icons: {
     icon: "/favicon.ico",
