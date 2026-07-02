@@ -1,4 +1,4 @@
-export default function BreadcrumbSchema({ pageName, pageUrl }) {
+export default function BreadcrumbSchema() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -7,13 +7,7 @@ export default function BreadcrumbSchema({ pageName, pageUrl }) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.fileconverter.co.in",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: pageName,
-        item: pageUrl,
+        item: "https://fileconverter.co.in",
       },
     ],
   };

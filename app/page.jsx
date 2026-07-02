@@ -10,9 +10,17 @@ import Statistics from "@/components/home/Statistics";
 import FAQ from "@/components/home/FAQ";
 import CTA from "@/components/home/CTA";
 
+import StructuredData from "./StructuredData";
+import FAQSchema from "./FAQSchema";
+import BreadcrumbSchema from "./BreadcrumbSchema";
+
 export default function Home() {
   return (
     <>
+      <StructuredData />
+      <FAQSchema />
+      <BreadcrumbSchema />
+
       <Hero />
       <SearchConverter />
       <PopularTools />

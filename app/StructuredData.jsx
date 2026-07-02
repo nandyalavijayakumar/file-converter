@@ -1,27 +1,26 @@
-export default function StructuredData({
-  title,
-  description,
-  url,
-}) {
+export default function StructuredData() {
   const schema = {
     "@context": "https://schema.org",
-    "@type": "WebApplication",
-    name: title,
-    description,
-    url,
-    applicationCategory: "UtilitiesApplication",
-    operatingSystem: "Any",
+    "@type": "WebSite",
 
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
+    name: "FileConverter",
+
+    url: "https://fileconverter.co.in",
+
+    description:
+      "Free online file converter to convert PDF, Word, Images, Excel, PowerPoint and Text files quickly and securely.",
+
+    potentialAction: {
+      "@type": "SearchAction",
+      target:
+        "https://fileconverter.co.in/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
     },
 
     publisher: {
       "@type": "Organization",
       name: "FileConverter",
-      url: "https://www.fileconverter.co.in",
+      url: "https://fileconverter.co.in",
     },
   };
 

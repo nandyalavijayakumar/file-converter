@@ -50,12 +50,12 @@ export default function ImageToPdf() {
     <StructuredData
       title="Image to PDF Converter"
       description="Convert JPG, PNG, WebP and other images to PDF online for free."
-      url="https://www.fileconverter.co.in/convert/image-to-pdf"
+      url="https://fileconverter.co.in/convert/image-to-pdf"
     />
 
     <BreadcrumbSchema
       pageName="Image to PDF"
-      pageUrl="https://www.fileconverter.co.in/convert/image-to-pdf"
+      pageUrl="https://fileconverter.co.in/convert/image-to-pdf"
     />
 
     <FAQSchema
